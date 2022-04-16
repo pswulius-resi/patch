@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level (%F:%L) - %msg%n"/>
+		</Console>
+	</Appenders>
+	<xi:include href="log4j2-xinclude-loggers.xml" />
+</Configuration>

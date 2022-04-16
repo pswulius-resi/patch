@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Loggers>
+	<Logger name="io.resi" level="INFO"/>
+	<Logger name="feign.hystrix" level="INFO"/>
+	<Root level="WARN">
+		<AppenderRef ref="Console"/>
+	</Root>
+</Loggers>
+

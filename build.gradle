@@ -1,0 +1,55 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'io.resi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	archaiusVersion = '2.3.16'
+	encrypt4jVersion = "1.1.13"
+	resilience4jVersion = '1.7.1'
+	jacksonVersion = '2.11.4'
+	log4jVersion = '2.17.0'
+	slf4jVersion = '1.7.32'
+	validationVersion = '2.0.2'
+	jaxrsVersion = '2.1.6'
+	jerseyVersion = '2.32'
+	jaxrsFiltersVersion = '1.3.33'
+	wiremockVersion = '2.27.2'
+	gcp4jVersion = '1.1.54'
+	orikaVersion = '1.5.4'
+	mustacheVersion = '4.2.0'
+	gocardlessVersion = '4.6.0'
+	errors4jVersion = '1.0.2'
+	token4jVersion = '1.1.17'
+	openFeignVersion = '11.8'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation "org.springframework.boot:spring-boot-starter-jersey"
+	implementation "jakarta.ws.rs:jakarta.ws.rs-api:${jaxrsVersion}"
+	implementation 'ma.glasnost.orika:orika-core:1.5.4'
+
+	implementation "io.github.openfeign:feign-core:${openFeignVersion}"
+	implementation "io.github.openfeign:feign-hystrix:${openFeignVersion}"
+	implementation "io.github.openfeign:feign-jackson:${openFeignVersion}"
+	implementation "io.github.openfeign:feign-jaxrs:${openFeignVersion}"
+	implementation "io.github.openfeign:feign-slf4j:${openFeignVersion}"
+
+	implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
